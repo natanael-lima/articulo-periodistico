@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artículo | Noticias Laguna</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .titulo-elegante {
+    font-family: 'Playfair Display', serif;
+    }
+    .nav-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+    .nav-date {
+      font-size: 1rem;
+      color: #888;
+    }
+    .nav-link {
+      color: #000;
+      font-weight: 500;
+      margin-right: 1rem;
+      transition: color 0.2s ease-in-out;
+    }
+    .nav-link:hover {
+      color: #007bff;
+    }
+    footer {
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+ <div class="container">
+  <!-- Primera fila: logo y fecha -->
+  <header class="border-bottom py-2">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <!-- Columna izquierda -->
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="#">Articulo</a>
+      </div>
+
+      <!-- Columna central -->
+      <div class="col-4 text-center">
+        <h3 class="blog-header-logo text-body-emphasis text-decoration-none titulo-elegante" href="#">SOMOS GRUPO 13</h3>
+      </div>
+
+      <!-- Columna derecha con fecha -->
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <span class="text-secondary" id="fechaActual"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Segunda fila: navegación -->
+  <div class="nav-scroller py-1 mb-3 border-bottom">
+    <nav class="nav nav-underline justify-content-between">
+      <a class="h6 nav-item nav-link link-body-emphasis active" href="#">Educación</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Argentina</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Cultura</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Deportes</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Economía</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Tecnología</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Sociedad</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Opinión</a>
+      <a class="nav-item nav-link link-body-emphasis" href="#">Mundo</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Contenido -->
+<main class="container py-4">
+  <div class="row">
+    <!-- Noticias recientes (izquierda horizontal sticky) -->
+    <aside class="col-md-3 d-none d-md-block">
+      <h5 class="pb-2 mb-3 titulo-elegante">Recientes</h5>
+        <ul class="list-unstyled">
+            <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"> <img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    <div class="col-lg-8">
+                        <h6 class="mb-0">Example blog post title</h6> <small class="text-body-secondary">January 15,
+                            2024</small>
+                    </div>
+                </a> </li>
+            <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"><img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    <div class="col-lg-8">
+                        <h6 class="mb-0">This is another blog post title</h6> <small class="text-body-secondary">January 14,
+                            2024</small>
+                    </div>
+                </a> </li>
+            <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"> <img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    <div class="col-lg-8">
+                        <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6> <small
+                            class="text-body-secondary">January 13, 2024</small>
+                    </div>
+                </a> </li>
+                <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                    href="#"> <img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    <div class="col-lg-8">
+                        <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6> <small
+                            class="text-body-secondary">January 13, 2024</small>
+                    </div>
+                </a> </li>
+        </ul>
+    </aside>
+
+    <!-- Artículo principal -->
+    <article class="col-md-9">
+      <h1 class="mb-3">Revolución Educativa: Construyendo Futuro desde el Aula</h1>
+      <p class="text-muted">Publicado el 23 julio 2025 · por Grupo 13</p>
+
+      <!-- Entrada -->
+      <p class="lead">
+        En un contexto global donde los desafíos son cada vez más complejos, la educación se ha convertido en el pilar fundamental para construir sociedades resilientes, inclusivas y creativas. Este artículo analiza cómo América Latina, y particularmente Argentina, están replanteando sus modelos pedagógicos para adaptarse al siglo XXI.
+      </p>
+
+      <!-- Tesis -->
+      <p>
+        La tesis central es clara: sin una transformación estructural de la educación, será imposible enfrentar el futuro con garantías. La educación debe dejar de ser un proceso unilateral de transmisión de conocimiento, para convertirse en una experiencia dinámica, interdisciplinaria, centrada en el estudiante y conectada con la realidad.
+      </p>
+
+      <!-- Argumentos + Desarrollo -->
+      <p>
+        Numerosos informes internacionales, como los del Banco Mundial y UNESCO, han advertido sobre la necesidad de reimaginar el sistema educativo. En muchos países de América Latina, las tasas de abandono escolar son altas, la infraestructura es deficiente y el currículo permanece desactualizado. Frente a esto, surgen iniciativas innovadoras.
+      </p>
+
+      <p>
+        En provincias como Córdoba, Buenos Aires y Salta, han comenzado a implementarse programas piloto que integran robótica, pensamiento computacional, aprendizaje basado en proyectos y competencias emocionales. La respuesta de la comunidad educativa ha sido positiva, demostrando que el cambio es posible con voluntad política, formación docente y recursos adecuados.
+      </p>
+
+      <img src="https://source.unsplash.com/900x500/?education,students" class="img-fluid rounded my-4" alt="Estudiantes aprendiendo">
+
+      <p>
+        Además de lo pedagógico, la transformación implica una revolución en la infraestructura. Nuevas escuelas modulares con conexión a internet, bibliotecas digitales y espacios colaborativos son parte del nuevo paradigma. El objetivo es generar entornos de aprendizaje modernos y seguros que potencien la creatividad, el pensamiento crítico y el trabajo en equipo.
+      </p>
+
+      <p>
+        No se puede hablar de educación sin mencionar la formación docente. Actualmente, miles de maestros participan en capacitaciones para actualizar sus prácticas. Estas capacitaciones ya no se limitan a la teoría, sino que incluyen simulaciones, acompañamiento en el aula y evaluación por competencias.
+      </p>
+
+      <p>
+        En cuanto a políticas públicas, el Ministerio de Educación ha lanzado el plan "Escuelas del Futuro", con una inversión de 500 millones de pesos para los próximos dos años. Este plan prioriza zonas rurales, comunidades indígenas y barrios populares. Se trata de reducir la brecha educativa y garantizar igualdad de oportunidades.
+      </p>
+
+      <img src="https://source.unsplash.com/900x500/?modern,classroom" class="img-fluid rounded my-4" alt="Aula tecnológica">
+
+      <p>
+        Por otra parte, se están creando alianzas entre escuelas, universidades, ONGs y empresas tecnológicas. Estas alianzas permiten la creación de contenidos educativos abiertos, el desarrollo de plataformas interactivas y el fomento del emprendedurismo juvenil. El conocimiento se convierte así en una herramienta viva, colaborativa y expansiva.
+      </p>
+
+      <p>
+        La participación de las familias también ha cobrado protagonismo. Se realizan jornadas comunitarias, espacios de reflexión y acompañamiento a padres. Se busca construir una red entre escuela, familia y comunidad, clave para prevenir la deserción escolar y fortalecer los vínculos afectivos.
+      </p>
+
+      <p>
+        El cambio también pasa por reconocer los saberes locales. Muchas escuelas rurales están integrando contenidos culturales y productivos propios de su región: agroecología, lenguas originarias, artesanías y saberes populares. De esta forma, se construye una educación enraizada, con identidad y visión de futuro.
+      </p>
+
+      <p>
+        Por último, se destaca el impacto de la tecnología. El acceso a tablets, aulas híbridas y la gamificación del aprendizaje están generando una nueva relación entre los estudiantes y el conocimiento. Se aprende jugando, creando y compartiendo. La motivación se convierte en el principal motor del aprendizaje.
+      </p>
+
+      <!-- Conclusión -->
+      <p>
+        En definitiva, estamos frente a un cambio de paradigma. La escuela ya no es un espacio estático, sino un laboratorio vivo de ideas, emociones y desafíos. La educación transformadora no es un sueño lejano, es una necesidad impostergable. Porque solo educando con sentido, pasión y equidad podremos construir el futuro que merecemos.
+      </p>
+
+      <footer class="pt-4 bg-secondary  mt-2">
+        <p class="text-muted">Artículo elaborado por el equipo de redacción de <strong>Grupo 13</strong>.</p>
+      </footer>
+    </article>
+  </div>
+</main>
+
+<!-- Pie de página -->
+<footer class="container">
+  <p>© 2025 Grupo 13</p>
+</footer>
+<!-- Fecha dinámica con JS -->
+<script>
+  const fecha = new Date();
+  const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('fechaActual').textContent = fecha.toLocaleDateString('es-ES', opciones);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
