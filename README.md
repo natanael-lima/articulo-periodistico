@@ -22,17 +22,7 @@ Página web estilo blog/article periodístico responsivo, desarrollado con **HTM
 ---
 
 ## 📌 Características  
-- **Diseño moderno** con tipografía legible y paleta de colores profesional.  
-- **Estructura de artículo periodístico**:  
-  - Título impactante (`<h1>`).  
-  - Entrada con gancho periodístico (`<p class="lead">`).  
-  - Secciones con argumentos (`<section>` + cards).  
-  - Imágenes ilustrativas (`<figure>`).  
-- **Responsive**: Adaptable a móviles, tablets y desktop.  
-- **Extras**:  
-  - Barra de navegación (navbar) con menú.  
-  - Footer con datos del autor.  
-
+- **Diseño moderno** con tipografía legible estilo minimalista
 ---
 
 ## 🖥️ Cómo Visualizar el Proyecto  
