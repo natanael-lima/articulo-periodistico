@@ -33,25 +33,62 @@
     .nav-link:hover {
       color: #007bff;
     }
-    footer {
+    .scroll-nav {
+    justify-content: center;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    }
+
+    .scroll-nav::-webkit-scrollbar {
+      display: none; /* Oculta scroll en iOS/Android */
+    }
+
+    .scroll-nav a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: background-color 0.3s;
+    }
+
+     footer {
       border-top: 1px solid #ddd;
       padding-top: 1rem;
       margin-top: 3rem;
       text-align: center;
       font-size: 0.9rem;
     }
+    dialog {
+      border: none;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.4);
+    }
+
   </style>
 </head>
 <body>
 
 <!-- Header -->
- <div class="container">
+ <div class="py-1">
   <!-- Primera fila: logo y fecha -->
-  <header class="border-bottom py-2">
+  <header class="py-3 container">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <!-- Columna izquierda -->
       <div class="col-4 pt-1">
-        <a class="link-secondary" href="#">Articulo</a>
+        <a class="link-secondary" href="#"></a>
       </div>
 
       <!-- Columna central -->
@@ -60,26 +97,61 @@
       </div>
 
       <!-- Columna derecha con fecha -->
-      <div class="col-4 d-flex justify-content-end align-items-center">
-        <span class="text-secondary" id="fechaActual"></span>
+      <div class="col-4 d-flex justify-content-end ">
+        <span class="text-secondary small" id="fechaActual"></span>
       </div>
     </div>
   </header>
-
-  <!-- Segunda fila: navegación -->
-  <div class="nav-scroller py-1 mb-3 border-bottom">
-    <nav class="nav nav-underline justify-content-between">
-      <a class="h6 nav-item nav-link link-body-emphasis active" href="#">Educación</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Argentina</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Cultura</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Deportes</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Economía</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Tecnología</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Sociedad</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Opinión</a>
-      <a class="nav-item nav-link link-body-emphasis" href="#">Mundo</a>
-    </nav>
+  <!-- Contenedor SOLO visible en pantallas grandes -->
+  <div class="d-none d-lg-block">
+      <div class="container scroll-nav py-1 mb-2 bg-danger rounded-2">
+        <nav class="justify-content-start px-2">
+          <a class="nav-item nav-link link-warning active" href="#">Educación</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Argentina</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Cultura</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Deportes</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Economía</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Tecnología</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Sociedad</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Opinión</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Mundo</a>
+          <!-- Botón para abrir el popup -->
+          <button class="btn btn-outline-light btn-sm " href="#" onclick="document.getElementById('popup').showModal()">Nosotros</button>
+          <!-- Popup -->
+          <dialog id="popup">
+            <h2>Grupo 13 - Licenciatura en Informatica Educativa</h2>
+            <p>Somos un colectivo comprometido con la educación, la cultura y la comunicación responsable.</p>
+            <button class="btn btn-secondary btn-sm item-left" onclick="document.getElementById('popup').close()">Cerrar</button>
+          </dialog>
+        </nav>
+      </div>
+    </div>
   </div>
+  <!-- Contenido sin container visible SOLO en pantallas chicas -->
+  <div class="d-block d-lg-none">
+   <div class="scroll-nav py-1 mb-2 bg-danger rounded-0">
+        <nav class="justify-content-start px-2">
+          <a class="nav-item nav-link link-warning active" href="#">Educación</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Argentina</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Cultura</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Deportes</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Economía</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Tecnología</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Sociedad</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Opinión</a>
+          <a class="nav-item nav-link link-light link-opacity-75-hover" href="#">Mundo</a>
+          <!-- Botón para abrir el popup -->
+          <button class="btn btn-outline-light btn-sm " href="#" onclick="document.getElementById('popup').showModal()">Nosotros</button>
+          <!-- Popup -->
+          <dialog id="popup">
+            <h2>Grupo 13 - Licenciatura en Informatica Educativa</h2>
+            <p>Somos un colectivo comprometido con la educación, la cultura y la comunicación responsable.</p>
+            <button class="btn btn-secondary btn-sm item-left" onclick="document.getElementById('popup').close()">Cerrar</button>
+          </dialog>
+        </nav>
+      </div>
+  </div>
+ 
 </div>
 
 <!-- Contenido -->
@@ -90,31 +162,31 @@
       <h5 class="pb-2 mb-3 titulo-elegante">Recientes</h5>
         <ul class="list-unstyled">
             <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                    href="#"> <img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    href="#"> <img src="https://ichef.bbci.co.uk/ace/ws/640/amz/worldservice/live/assets/images/2013/09/13/130913103911_ultima_hora_new_304x171.jpg.webp"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
                     <div class="col-lg-8">
-                        <h6 class="mb-0">Example blog post title</h6> <small class="text-body-secondary">January 15,
-                            2024</small>
+                        <h6 class="mb-0">Aumentan becas universitarias</h6>
+                        <small class="text-body-secondary">10 de Julio, 2025</small>
                     </div>
                 </a> </li>
             <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                    href="#"><img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    href="#"><img src="https://resizer.glanacion.com/resizer/v2/jose-urtubey-andquotel-2020-va-a-ser-un-ano-muy-2OS7CP6OQZDEJGZSP4K4ZHUQNI.jpg?auth=e5c908a76e709986901bb0ba5667964767f498b09889f82bf6996188f2fe9a7d&width=1200&quality=70&smart=false&height=799"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
                     <div class="col-lg-8">
-                        <h6 class="mb-0">This is another blog post title</h6> <small class="text-body-secondary">January 14,
-                            2024</small>
+                        <h6 class="mb-0">Abren bibliotecas rurales</h6> 
+                        <small class="text-body-secondary">15 de Mayo, 2025</small>
                     </div>
                 </a> </li>
             <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                    href="#"> <img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    href="#"> <img src="https://images.pagina12.com.ar/styles/focal_3_2_470x313/public/am750-legacy-img/whatsapp-20image-202019-12-30-20at-201-19-39-20pm_0.jpeg?itok=_EMjzLMh"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
                     <div class="col-lg-8">
-                        <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6> <small
-                            class="text-body-secondary">January 13, 2024</small>
+                        <h6 class="mb-0">Nueva universidad en Formosa</h6> <small
+                            class="text-body-secondary">02 de Mayo, 2025</small>
                     </div>
                 </a> </li>
                 <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                    href="#"> <img src="https://i0.wp.com/lanoticia.com/wp-content/uploads/2021/04/screen-shot-2021-04-11-at-82309-pm.jpg?fit=937%2C555&ssl=1"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
+                    href="#"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8arFCBpeaQxq1XqjXQb46QYI2kmMn2NvYH9PHtfSE_-1wD7Z_79RFb8zo1-BhmkSlqGE&usqp=CAU"  width="96" height="96" class="rounded me-3" style="object-fit: cover;" alt="Mini Noticia 1">
                     <div class="col-lg-8">
-                        <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6> <small
-                            class="text-body-secondary">January 13, 2024</small>
+                        <h6 class="mb-0">IA en la Eduación</h6> <small
+                            class="text-body-secondary">24 de Abril, 2025</small>
                     </div>
                 </a> </li>
         </ul>
@@ -144,7 +216,7 @@
         En provincias como Córdoba, Buenos Aires y Salta, han comenzado a implementarse programas piloto que integran robótica, pensamiento computacional, aprendizaje basado en proyectos y competencias emocionales. La respuesta de la comunidad educativa ha sido positiva, demostrando que el cambio es posible con voluntad política, formación docente y recursos adecuados.
       </p>
 
-      <img src="https://source.unsplash.com/900x500/?education,students" class="img-fluid rounded my-4" alt="Estudiantes aprendiendo">
+      <img src="https://celee.uao.edu.co/wp-content/uploads/sites/9/2018/10/NOTICIA-WEB.jpg" width="400" height="400" class="img-fluid rounded my-4" alt="Estudiantes aprendiendo">
 
       <p>
         Además de lo pedagógico, la transformación implica una revolución en la infraestructura. Nuevas escuelas modulares con conexión a internet, bibliotecas digitales y espacios colaborativos son parte del nuevo paradigma. El objetivo es generar entornos de aprendizaje modernos y seguros que potencien la creatividad, el pensamiento crítico y el trabajo en equipo.
@@ -158,7 +230,7 @@
         En cuanto a políticas públicas, el Ministerio de Educación ha lanzado el plan "Escuelas del Futuro", con una inversión de 500 millones de pesos para los próximos dos años. Este plan prioriza zonas rurales, comunidades indígenas y barrios populares. Se trata de reducir la brecha educativa y garantizar igualdad de oportunidades.
       </p>
 
-      <img src="https://source.unsplash.com/900x500/?modern,classroom" class="img-fluid rounded my-4" alt="Aula tecnológica">
+      <img src="https://img.freepik.com/vector-gratis/fondo-realista-dia-periodista_23-2149483377.jpg" width="100" height="100" class="img-fluid rounded my-4" alt="Aula tecnológica">
 
       <p>
         Por otra parte, se están creando alianzas entre escuelas, universidades, ONGs y empresas tecnológicas. Estas alianzas permiten la creación de contenidos educativos abiertos, el desarrollo de plataformas interactivas y el fomento del emprendedurismo juvenil. El conocimiento se convierte así en una herramienta viva, colaborativa y expansiva.
@@ -181,9 +253,14 @@
         En definitiva, estamos frente a un cambio de paradigma. La escuela ya no es un espacio estático, sino un laboratorio vivo de ideas, emociones y desafíos. La educación transformadora no es un sueño lejano, es una necesidad impostergable. Porque solo educando con sentido, pasión y equidad podremos construir el futuro que merecemos.
       </p>
 
-      <footer class="pt-4 bg-secondary  mt-2">
-        <p class="text-muted">Artículo elaborado por el equipo de redacción de <strong>Grupo 13</strong>.</p>
+      <footer class="bg-danger text-white text-center py-4 mt-4 rounded-2">
+        <div class="container">
+          <p class="mb-0 fs-6">
+            Artículo elaborado por el equipo de redacción de <strong>Grupo 13</strong>.
+          </p>
+        </div>
       </footer>
+
     </article>
   </div>
 </main>
